@@ -30,7 +30,7 @@ public class DataGenerator {
                 "Якутск", "Владикавказ", "Казань", "Кызыл", "Ижевск", "Абакан", "Грозный", "Чебоксары",
                 "Барнаул", "Чита", "Петропавловск-камчатский", "Краснодар", "Красноярск", "Пермь",
                 "Влапивосток", "Ставрополь", "Хабаровск"};
-        return cities[new Random().nextInt(cities.length)];
+        return cities[new Random().nextInt(83)];
     }
 
     public static String generateName(String locale) {
@@ -41,6 +41,11 @@ public class DataGenerator {
     public static String generatePhone(String locale) {
         var faker = new Faker(new Locale(locale));
         return faker.phoneNumber().phoneNumber();
+    }
+
+    public static String generateWrongPhone(String locale) {
+        var faker = new Faker(new Locale(locale));
+        return faker.numerify("####");
     }
 
     public static class Registrarion {
